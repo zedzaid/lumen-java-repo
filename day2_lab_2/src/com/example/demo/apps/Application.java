@@ -17,23 +17,23 @@ public class Application {
 		bookRepo.add(new Book(2,"THE HOUSE OF MIRTH","EDITH WHARTON",1599.00));
 		bookRepo.add(new Book(3,"EAST OF EDEN","JOHN STEINBECK",149.00));
 		
-		Scanner sc = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Book Library");
 		
-		for(Book b : bookRepo) {
-			System.out.println(b.getId()+" "+b.getBookName()+" by  "+b.getAuthor()+" | Price "+b.getPrice());
+		for(Book eachBook : bookRepo) {
+			System.out.println(eachBook.getId()+" "+eachBook.getBookName()+" by  "+eachBook.getAuthor()+" | Price "+eachBook.getPrice());
 		}
 		
 		System.out.println("Enter your book ID");
-		int id=sc.nextInt()-1;
+		int id=scanner.nextInt()-1;
 		
 		Book selectedBook = bookRepo.get(id);
 		
 		System.out.println("Select the Customer type");
 		
 		System.out.println("1. Corporate\n2. Retail\n3. other ");
-		int type=sc.nextInt();
+		int type=scanner.nextInt();
 		
 		switch (type) {
 		case 1: {
@@ -51,7 +51,7 @@ public class Application {
 			
 			
 		
-		
+		scanner.close();
 	}
 
 }
