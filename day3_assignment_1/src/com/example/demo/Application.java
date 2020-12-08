@@ -10,7 +10,7 @@ public class Application {
 		
 		
 		System.out.println("Welcome to XYZ Bank ");
-		System.out.println("=======================");
+		System.out.println("========================");
 		
 		System.out.println("Housing Loan DashBoard");
 		
