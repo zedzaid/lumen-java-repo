@@ -7,7 +7,7 @@ import com.example.demo.services.HousingLoan;
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		
 		System.out.println("Welcome to XYZ Bank ");
 		System.out.println("=======================");
