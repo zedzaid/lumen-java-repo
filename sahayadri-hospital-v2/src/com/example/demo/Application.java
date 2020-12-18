@@ -23,7 +23,6 @@ public class Application {
 		int patientId;
 		int age;
 		String gender;
-		int count;
 		int selectDoctor;
 		String date;
 		boolean exitLoop=true;
@@ -54,19 +53,15 @@ public class Application {
 				case 1: 
 					System.out.println("Enter the doctor name");
 					name = scanner.nextLine();
-					System.out.println("enter the doctor Id");
-					doctorId = Integer.parseInt(scanner.nextLine());
 					System.out.println("enter the doctors qualifications");
 					qualifications = scanner.nextLine();
 					HashMap<String,List<Patient>> doctorPatients = new HashMap<>();
-					service.addDoctor(totalDoctors, new Doctor(name,doctorId,qualifications,doctorPatients));
+					service.addDoctor(totalDoctors, new Doctor(name,(doctorId++),qualifications,doctorPatients));
 					break;
 				
 				case 2: 
 					System.out.println("enter the patient name");
 					String patientName = scanner.nextLine();
-					System.out.println("enter patient Id");
-					patientId = Integer.parseInt(scanner.nextLine());
 					System.out.println("enter the patient's age");
 					age = Integer.parseInt(scanner.nextLine());
 					System.out.println("enter the gender");
@@ -77,7 +72,7 @@ public class Application {
 					Doctor patientsDoctor = totalDoctors.get(selectDoctor-1);
 					System.out.println("Enter the date");
 					date = scanner.nextLine();
-					service.addPatient(patientsDoctor, new Patient(patientName, patientId, age, gender), date);
+					service.addPatient(patientsDoctor, new Patient(patientName, (patientId++), age, gender), date);
 					break;
 				case 3:
 					System.out.println("enter your patient Id");
